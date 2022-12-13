@@ -42,8 +42,11 @@ def get_product_array(nums):
         products.append(left_side[i] * right_side[i])
     return products
 
+print(get_product_array([3,2,1]))
+print(get_product_array(range(1,6)))
+"""
 start = time.time()
 get_product_array([2] * 100000)
 end = time.time()
 print(end-start, 'seconds')
-
+"""
