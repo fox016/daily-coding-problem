@@ -1,3 +1,5 @@
+import sys
+
 def zigzag(sentence, k):
     z = ""
     down = True
@@ -25,6 +27,14 @@ def zigzag(sentence, k):
         z += "\n"
     return z
 
-s = "thisisazigzag"
-k = 4
-print(zigzag(s, k))
+if __name__ == "__main__":
+    args = sys.argv
+    if len(args) != 3:
+        print("Usage: python 2.3.py <sentence> <k>")
+        sys.exit()
+    try:
+        args[2] = int(args[2])
+    except ValueError as err:
+        print("Usage: python 2.3.py <sentence> <k>")
+        sys.exit()
+    print(zigzag(args[1], args[2]))
