@@ -1,3 +1,7 @@
+"""
+Reverse a singly-linked list in place
+"""
+
 def reverse_list(node):
     curr = node
     prev = None
