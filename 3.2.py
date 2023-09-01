@@ -3,6 +3,18 @@ Add two numbers represented by linked lists
 e.g. 947 represented as 7 -> 4 -> 9
 """
 
+def add_lists(n1, n2, carry=0):
+    if n1 == None and n2 == None and carry == 0:
+        return None
+    v1 = n1.data if n1 else 0
+    v2 = n2.data if n2 else 0
+    val = v1 + v2 + carry
+    carry = 0
+    if val >= 10:
+        val, carry = (val-10, 1)
+    return Node(val, add_lists(n1.next if n1 else None, n2.next if n2 else None, carry))
+
+"""
 def add_lists(l1, l2):
     n1, n2, sum_list, carry = l1, l2, None, 0
     while True:
@@ -39,6 +51,7 @@ def reverse_list(node):
         prev = curr
         curr = next
     return prev
+"""
 
 def num_to_list(num):
     arr = [int(i) for i in str(num)]
